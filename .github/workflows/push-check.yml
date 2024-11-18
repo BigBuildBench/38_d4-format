@@ -1,0 +1,24 @@
+name: Push Check
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+        matrix:
+            os: [ubuntu-latest, macos-latest]
+    steps:
+    - uses: actions/checkout@v1
+      with:
+          submodules: recursive
+    - uses: actions-rs/toolchain@v1
+      with:
+          toolchain: stable
+          override: true
+    - uses: actions-rs/cargo@v1
+      with:
+          command: build
+          args: --verbose
+    - name: Run Integration Tests
+      run: cd d4tools/test && ./test-driver

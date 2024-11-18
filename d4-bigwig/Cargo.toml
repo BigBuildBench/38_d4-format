@@ -1,0 +1,14 @@
+[package]
+name = "d4-bigwig"
+version = "0.3.6"
+authors = ["Hao Hou <haohou302@gmail.com>"]
+edition = "2021"
+license = "MIT"
+description = "The libBigWig binding used by D4"
+repository = "https://github.com/38/d4-format"
+
+[dependencies]
+
+[build-dependencies]
+bindgen = "0.55.1"
+

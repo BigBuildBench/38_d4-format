@@ -1,0 +1,14 @@
+[workspace]
+default-members=["d4tools"]
+members = [
+	"d4-framefile",
+	"d4-hts",
+	"d4",
+	"d4tools",
+	"d4binding",
+	"d4-bigwig",
+	"pyd4"
+]
+
+[profile.release]
+debug = true

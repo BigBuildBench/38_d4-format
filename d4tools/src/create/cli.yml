@@ -1,0 +1,79 @@
+name: d4-create - Create a D4 depth Dump
+author: Hao Hou <haohou302@gmail.com>
+args:
+    - filter:
+        short: f
+        long: filter
+        value_name: regex
+        help: A regex that matches the genome name should present in the output file
+    - ref:
+        short: r
+        long: ref
+        value_name: fai_file_path
+        help: Reference genome file (Used by CRAM inputs)
+    - genome:
+        short: g
+        long: genome
+        value_name: genome_file
+        help: The genome description file (Used by BED inputs)
+    - threads:
+        short: t
+        long: threads
+        value_name: num_of_threads
+        help: Specify the number of threads D4 can use for encoding
+    - dict-range:
+        short: R
+        long: dict-range
+        value_name: dict_spec
+        help: Dictionary specification, use "a-b" to specify the dictionary is encoding values from A to B(exclusively)
+    - dict-auto:
+        short: A
+        long: dict-auto
+        help: Automatically determine the dictionary type by random sampling
+    - dict-file:
+        short: d
+        long: dict-file
+        value_name: dict_spec_file
+        help: Provide a file that defines the values of the dictionary
+    - deflate:
+        short: z
+        long: deflate
+        help: Enable the deflate compression
+    - deflate-level:
+        long: deflate-level
+        value_name: level
+        help: Configure the deflate algorithm, default 5
+    - sparse:
+        long: sparse
+        short: S
+        help: Sparse mode, this is same as '-zR0-1', which enable secondary table compression and disable primary table 
+    - dump-dict:
+        long: dump-dict
+        help: Do not profile the BAM file, only dump the dictionary 
+    - min-mqual:
+        long: mapping-qual
+        short: q
+        value_name: mapping-qual
+        help: The minimal mapping quality (Only valid with CRAM/BAM inputs)
+    - bam-flag:
+        long: bam-flag
+        short: F
+        value_name: "bam-flag/+inclusive-mask/[-|~]exclusive-mask"
+        help: Count the reads with flag (Only valid with BAM/CRAM inputs).
+    - denominator:
+        long: denominator
+        value_name: VALUE
+        help: Turn on the fix-point mode, this will allow encoding real-number in D4 file
+    - with-index:
+        required: false
+        long: with-index
+        value_name: INDEX-TYPES
+        help: Also build the index 
+    - input-file:
+        required: true
+        help: Path to the input file 
+        index: 1
+    - output-file:
+        required: false
+        help: Path to the output file
+        index: 2

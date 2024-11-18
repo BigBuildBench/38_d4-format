@@ -1,0 +1,16 @@
+{
+	"cSpell.words": [
+		"avaiable",
+		"chrom",
+		"chroms",
+		"clus",
+		"framefile",
+		"ptab",
+		"ssio"
+	],
+	"files.associations": {
+		"*.pss": "pscript",
+		"d4.h": "c",
+		"stdlib.h": "c"
+	}
+}

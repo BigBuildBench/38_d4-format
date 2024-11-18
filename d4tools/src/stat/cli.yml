@@ -1,0 +1,41 @@
+name: d4-stat - Run statistics on D4 file
+author: Hao Hou <haohou302@gmail.com>
+args:
+    - stat:
+        short: s
+        long: stat
+        value_name: stat_type
+        help: "The type of statistics we want to perform, by default average. You can specify statistic methods: mean, median, hist, percentile=X%, perc_cov, sum, count (If this is not specified d4utils will use mean by default)"
+    - region:
+        short: r
+        long: region
+        value_name: bed_file_path
+        help: A bed file that describes the region on which we want to run the stat
+    - threads:
+        short: t
+        long: threads
+        value_name: num_of_threads
+        help: Number of threads 
+    - max-bin:
+        long: max-bin
+        value_name: maximum bin
+        help: "Set the upper bound of max bin (default: 1000)"
+    - input:
+        required: true
+        value_name: input_d4_file
+    - first:
+        short: f
+        long: first
+        help: "Show first data track from the given file"
+    - no-index:
+        long: no-index
+        help: "Do not use index even it's present"
+    - filter:
+        short: F
+        long: filter
+        value_name: 'TRACK-PATTERN'
+        help: "A regex that matches all the track labels to be printed"
+    - header:
+        short: H
+        long: header
+        help: "Print the column header"

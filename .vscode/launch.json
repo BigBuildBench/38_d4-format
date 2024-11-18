@@ -1,0 +1,32 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Cargo launch",
+			"cargo": {
+				"args": [
+					"build",
+					"--package=d4tools"
+				]
+			},
+			"program": "target/debug/d4tools",
+			"env": {"RUST_LOG": "info"},
+			"args": ["view", "/tmp/d4-test-data/abc.d4"],
+			"cwd": "/tmp"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug pyd4",
+			"cwd": "${workspaceFolder}/pyd4/build/lib",
+			"program": "python3",
+			"env": {"RUST_LOG": "info"},
+			"args": ["test3.py"]
+		},
+	]
+}

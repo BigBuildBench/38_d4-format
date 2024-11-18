@@ -1,0 +1,23 @@
+[package]
+name = "d4tools"
+version = "0.3.11"
+authors = ["Hao Hou <haohou302@gmail.com>"]
+edition = "2021"
+license = "MIT"
+description = "The CLI utils for D4 file format"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+seq-task = ["d4/seq-task"]
+d4-server = ["warp", "tokio", "serde_derive", "serde", "serde_json"]
+
+[dependencies]
+
+[[bin]]
+name = "d4tools"
+path = "src/main.rs"
+
+[lib]
+name = "d4tools"
+path = "src/lib.rs"
